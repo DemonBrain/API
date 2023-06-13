@@ -164,10 +164,9 @@ def get_one_sensordata():
     todas = controladores.one_sensordata()
     return jsonify(todas)
 
-@app.route('/sensordata/id', methods=["GET"])
-def get_specific_sensordata():
+@app.route('/sensordata/<sensor_id>', methods=["GET"])
+def get_specific_sensordata(sensor_id):
     game_details = request.get_json()
-    sensor_id = game_details["id"]
     sensor_api_key = game_details["api_key"]
     todas = controladores.specific_sensordata(sensor_id,sensor_api_key)
     return jsonify(todas)
