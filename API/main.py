@@ -164,7 +164,7 @@ def get_one_sensordata():
     todas = controladores.one_sensordata()
     return jsonify(todas)
 
-@app.route('/sensordata/<sensor_id>', methods=["GET"])
+@app.route('/sensordata/id', methods=["GET"])
 def get_specific_sensordata():
     game_details = request.get_json()
     sensor_id = game_details["id"]
@@ -173,7 +173,7 @@ def get_specific_sensordata():
     return jsonify(todas)
 
 @app.route("/sensordata", methods=["PUT"])
-def update_sensordata(  sensor_id, data_field1, data_field2):
+def update_sensordata():
     location_details = request.get_json()
     sensor_id = location_details["id"]
     data_field1 = location_details["field1"]
@@ -183,7 +183,7 @@ def update_sensordata(  sensor_id, data_field1, data_field2):
     return jsonify(result)
 
 @app.route("/sensordata", methods=["DELETE"])
-def delete_sensordata(sensor_id):
+def delete_sensordata():
     location_details = request.get_json()
     sensor_id = location_details["id"]
     sensor_api_key = location_details["api_key"]
