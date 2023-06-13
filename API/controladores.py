@@ -60,7 +60,7 @@ def insert_sensordata(sensor_id, data_field1, data_field2, sensor_api_key):
     cursor.execute(contra, [sensor_id])
     admin_password = cursor.fetchone()[0]
 
-    if sensor_api_key == contra:
+    if sensor_api_key == admin_password:
              statement = "INSERT INTO SensorData(sensor_id, data_field1, data_field2 )  VALUES (?, ?, ?)"
              cursor.execute(statement, [sensor_id, data_field1, data_field2])
              db.commit()
@@ -185,7 +185,7 @@ def specific_sensordata(sensor_id,sensor_api_key):
     cursor.execute(contra, [sensor_id])
     admin_password = cursor.fetchone()[0]
 
-    if sensor_api_key == contra:
+    if sensor_api_key == admin_password:
              statement = "SELECT * FROM SensorData WHERE sensor_id = ?"
              cursor.execute(statement, [sensor_id])
              db.commit()
@@ -202,7 +202,7 @@ def update_sensordata( sensor_id, data_field1, data_field2, sensor_api_key):
     cursor.execute(contra, [sensor_id])
     admin_password = cursor.fetchone()[0]
 
-    if sensor_api_key == contra:
+    if sensor_api_key == admin_password:
              statement = "UPDATE SensorData SET data_field1 = ?, data_field2 = ? WHERE sensor_id = ?"
              cursor.execute(statement, [data_field1, data_field2, sensor_id])
              db.commit()
@@ -219,7 +219,7 @@ def delete_sensordata(sensor_id,sensor_api_key):
     cursor.execute(contra, [sensor_id])
     admin_password = cursor.fetchone()[0]
 
-    if sensor_api_key == contra:
+    if sensor_api_key == admin_password:
              statement = "DELETE FROM SensorData WHERE sensor_id = ?;"
              cursor.execute(statement, [sensor_id])
              db.commit()
