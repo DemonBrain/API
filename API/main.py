@@ -66,8 +66,8 @@ def insert_sensor(username,passw):
     else:
         return jsonify(valid)    
 
-@app.route("/<username>/<passw>/sensordata", methods=["POST"])
-def insert_sensordata(username,passw):
+@app.route("/<username>/<passw>/sensordata/<sensor_api_key>", methods=["POST"])
+def insert_sensordata(username,passw,sensor_api_key):
     game_details = request.get_json()
     sensor_id = game_details["sensor_id"]
     data_field1 = game_details["field1"]
@@ -75,7 +75,7 @@ def insert_sensordata(username,passw):
     valid = controladores.validation(username,passw)
 
     if valid:
-        result = controladores.insert_sensordata(sensor_id, data_field1, data_field2)
+        result = controladores.insert_sensordata(sensor_id, data_field1, data_field2,sensor_api_key)
         return jsonify(result)
     else:
         return jsonify(valid)   
