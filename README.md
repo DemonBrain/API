@@ -11,3 +11,14 @@ Como se comento en el informe los deploy no nos sirven en estos momentos
 #Microsoft
 
 ![Captura de pantalla 2023-06-12 223102](https://github.com/DemonBrain/EMERGENTES/assets/81323986/ddfee081-fc5e-411a-b798-5c329768d428)
+
+
+#Error extraño
+
+Al insertar SensorData y igualar las sensor_api_key sale incorrecto aunque estas sean iguales, no se a que se debe este error
+
+
+![image](https://github.com/DemonBrain/EMERGENTES/assets/81323986/48e948a9-e0e3-4b27-bb70-bd95316e74de)
+
+![image](https://github.com/DemonBrain/EMERGENTES/assets/81323986/0472c168-f0f4-4153-b3f0-6b518f9d0e82)
+
