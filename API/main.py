@@ -66,19 +66,20 @@ def insert_sensor(username,passw):
     else:
         return jsonify(valid)    
 
-@app.route("/<username>/<passw>/sensordata/<sensor_api_key>", methods=["POST"])
-def insert_sensordata(username,passw,sensor_api_key):
+@app.route("/<username>/<passw>/sensordata", methods=["POST"])
+def insert_sensordata(username,passw):
     game_details = request.get_json()
     sensor_id = game_details["sensor_id"]
     data_field1 = game_details["field1"]
     data_field2 = game_details["field2"]
+    sensor_api_key = game_details["api_key"]
     valid = controladores.validation(username,passw)
 
     if valid:
         result = controladores.insert_sensordata(sensor_id, data_field1, data_field2,sensor_api_key)
         return jsonify(result)
     else:
-        return jsonify(valid)   
+        return jsonify(valid)    
 
 
 #Location Endpoint Muestra todo, muestra uno, edita, elimina. (GET, GET, PUT, DELETE)
@@ -163,23 +164,28 @@ def get_one_sensordata():
     todas = controladores.one_sensordata()
     return jsonify(todas)
 
-@app.route('/sensordata/<sensor_api_key>/<sensor_id>', methods=["GET"])
-def get_specific_sensordata(sensor_id,sensor_api_key):
+@app.route('/sensordata/<sensor_id>', methods=["GET"])
+def get_specific_sensordata():
+    game_details = request.get_json()
+    sensor_id = game_details["id"]
+    sensor_api_key = game_details["api_key"]
     todas = controladores.specific_sensordata(sensor_id,sensor_api_key)
     return jsonify(todas)
 
-@app.route("/sensordata/<sensor_api_key>", methods=["PUT"])
-def update_sensordata(  sensor_id, data_field1, data_field2, sensor_api_key):
+@app.route("/sensordata", methods=["PUT"])
+def update_sensordata(  sensor_id, data_field1, data_field2):
     location_details = request.get_json()
     sensor_id = location_details["id"]
     data_field1 = location_details["field1"]
     data_field2 = location_details["field2"]
+    sensor_api_key = location_details["api_key"]
     result = controladores.update_sensordata( sensor_id, data_field1, data_field2, sensor_api_key)
     return jsonify(result)
 
-@app.route("/sensordata/<sensor_api_key>", methods=["DELETE"])
-def delete_sensordata(sensor_id,sensor_api_key):
+@app.route("/sensordata", methods=["DELETE"])
+def delete_sensordata(sensor_id):
     location_details = request.get_json()
+    sensor_id = location_details["id"]
     sensor_api_key = location_details["api_key"]
     result = controladores.delete_sensordata(sensor_id,sensor_api_key)
     return jsonify(result)
