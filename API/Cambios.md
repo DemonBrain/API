@@ -7,3 +7,6 @@ Solo se agrego el sensor_api_key en la siguiente parte de codigo
 Solo se cambio la variable mal puesta 
 
 ![image](https://github.com/DemonBrain/EMERGENTES/assets/81323986/58a2865c-f4be-435c-840f-561b7d059262)
+
+
+Se volvio al anterior mal cambio el ultimo
