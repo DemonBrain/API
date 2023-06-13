@@ -22,3 +22,4 @@ Al insertar SensorData y igualar las sensor_api_key sale incorrecto aunque estas
 
 ![image](https://github.com/DemonBrain/EMERGENTES/assets/81323986/0472c168-f0f4-4153-b3f0-6b518f9d0e82)
 
+Se encontro el error que al final era que se enviaba como string y no como integer
