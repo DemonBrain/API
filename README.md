@@ -4,6 +4,10 @@
 
 Ya se posee un deploy asi que cuando avise para abrir la pagina se tendra implementado y cambiado para que pueda ser revisado
 
+
+
+-----------------------------------------------------------------------------------------
+
 Como se comento en el informe los deploy no nos sirven en estos momentos 
 
 #AWS
